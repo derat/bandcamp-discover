@@ -1,0 +1,319 @@
+# bandcamp-discover
+
+`bandcamp-discover` is a command-line program that queries the [Bandcamp
+Discover] API and prints album URLs to stdout.
+
+I wrote this to make it easier to find popular albums that are missing in
+[MusicBrainz] so I can add them using [yambs].
+
+This program is not affiliated with Bandcamp.
+
+[Bandcamp Discover]: https://bandcamp.com/#discover
+[MusicBrainz]: https://musicbrainz.org/
+[yambs]: https://github.com/derat/yambs
+
+## Usage
+
+```txt
+Usage: bandcamp-discover [flag]...
+Queries the Bandcamp Discover API and prints album URLs.
+
+  -format string
+    	Format to display (all, digital, vinyl, cd, cassette) (default "all")
+  -genre string
+    	Genre or genre/subgenre to query (default "all")
+  -list-genres
+    	Print all genres to stdout
+  -ranking string
+    	Ranking to display (top, new, rec) (default "top")
+```
+
+Here's the full list of genres and subgenres (as of late February 2023):
+
+```txt
+acoustic
+  all-acoustic
+  folk
+  singer-songwriter
+  rock
+  pop
+  guitar
+  americana
+  electro-acoustic
+  instrumental
+  piano
+  bluegrass
+  roots
+alternative
+  all-alternative
+  indie-rock
+  industrial
+  shoegaze
+  grunge
+  goth
+  dream-pop
+  emo
+  math-rock
+  britpop
+  jangle-pop
+ambient
+  all-ambient
+  chill-out
+  drone
+  dark-ambient
+  electronic
+  soundscapes
+  field-recordings
+  atmospheric
+  meditation
+  noise
+  new-age
+  idm
+  industrial
+blues
+  all-blues
+  rhythm-blues
+  blues-rock
+  country-blues
+  boogie-woogie
+  delta-blues
+  americana
+  electric-blues
+  gospel
+  bluegrass
+classical
+  all-classical
+  orchestral
+  neo-classical
+  chamber-music
+  classical-piano
+  contemporary-classical
+  baroque
+  opera
+  choral
+  modern-classical
+  avant-garde
+comedy
+  all-comedy
+  improv
+  stand-up
+country
+  all-country
+  bluegrass
+  country-rock
+  americana
+  country-folk
+  alt-country
+  country-blues
+  western
+  singer-songwriter
+  outlaw
+  honky-tonk
+  roots
+  hillbilly
+devotional
+  all-devotional
+  christian
+  gospel
+  meditation
+  spiritual
+  worship
+  inspirational
+electronic
+  all-electronic
+  house
+  electronica
+  downtempo
+  techno
+  electro
+  dubstep
+  beats
+  dance
+  idm
+  drum-bass
+  breaks
+  trance
+  glitch
+  chiptune
+  chillwave
+  dub
+  edm
+  instrumental
+  witch-house
+  garage
+  juke
+  footwork
+  vaporwave
+  synthwave
+experimental
+  all-experimental
+  noise
+  drone
+  avant-garde
+  experimental-rock
+  improvisation
+  sound-art
+  musique-concrete
+folk
+  all-folk
+  singer-songwriter
+  folk-rock
+  indie-folk
+  pop-folk
+  traditional
+  experimental-folk
+  roots
+funk
+  all-funk
+  funk-jam
+  deep-funk
+  funk-rock
+  jazz-funk
+  boogie
+  g-funk
+  rare-groove
+  electro
+  go-go
+hip-hop-rap
+  all-hip-hop-rap
+  rap
+  underground-hip-hop
+  instrumental-hip-hop
+  trap
+  conscious-hip-hop
+  boom-bap
+  beat-tape
+  hardcore
+  grime
+jazz
+  all-jazz
+  fusion
+  big-band
+  nu-jazz
+  modern-jazz
+  swing
+  free-jazz
+  soul-jazz
+  latin-jazz
+  vocal-jazz
+  bebop
+  spiritual-jazz
+kids
+  all-kids
+  family-music
+  educational
+  music-therapy
+  lullaby
+  baby
+latin
+  all-latin
+  brazilian
+  cumbia
+  tango
+  latin-rock
+  flamenco
+  salsa
+  reggaeton
+  merengue
+  bolero
+  méxico-d.f.
+  bachata
+metal
+  all-metal
+  hardcore
+  black-metal
+  death-metal
+  thrash-metal
+  grindcore
+  doom
+  post-hardcore
+  progressive-metal
+  metalcore
+  sludge-metal
+  heavy-metal
+  deathcore
+  noise
+pop
+  all-pop
+  indie-pop
+  synth-pop
+  power-pop
+  new-wave
+  dream-pop
+  noise-pop
+  experimental-pop
+  electro-pop
+  adult-contemporary
+  jangle-pop
+  j-pop
+punk
+  all-punk
+  hardcore-punk
+  garage
+  pop-punk
+  punk-rock
+  post-punk
+  post-hardcore
+  thrash
+  crust-punk
+  folk-punk
+  emo
+  ska
+  no-wave
+r-b-soul
+  all-r-b-soul
+  soul
+  r-b
+  neo-soul
+  gospel
+  contemporary-r-b
+  motown
+  urban
+reggae
+  all-reggae
+  dub
+  ska
+  roots
+  dancehall
+  rocksteady
+  ragga
+  lovers-rock
+rock
+  all-rock
+  indie
+  prog-rock
+  post-rock
+  rock-roll
+  psychedelic-rock
+  hard-rock
+  garage-rock
+  surf-rock
+  instrumental
+  math-rock
+  rockabilly
+soundtrack
+  all-soundtrack
+  film-music
+  video-game-music
+spoken-word
+  all-spoken-word
+  poetry
+  inspirational
+  storytelling
+  self-help
+world
+  all-world
+  latin
+  roots
+  african
+  tropical
+  tribal
+  brazilian
+  celtic
+  world-fusion
+  cumbia
+  gypsy
+  new-age
+  balkan
+  reggaeton
+```
